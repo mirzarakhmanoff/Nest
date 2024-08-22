@@ -1,16 +1,19 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
-const Card = ({ img, title }) => {
+const Card = ({ img, title, id }) => {
   return (
     <div className="border border-gray-300 rounded-lg shadow-md w-[220px] h-[320px] px-3 py-4 bg-white flex flex-col transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-gray-100">
       <div className="product__img mb-3 flex items-center justify-center flex-grow">
-        <img
-          src={img}
-          alt={title}
-          className="w-full h-24 object-contain rounded-md transition-transform duration-300 ease-in-out transform hover:scale-110"
-        />
+        <Link to={`product/${id}`}>
+          <img
+            src={img}
+            alt={title}
+            className="w-full h-24 object-contain rounded-md transition-transform duration-300 ease-in-out transform hover:scale-110"
+          />
+        </Link>
       </div>
       <div className="product__desc flex flex-col flex-grow">
         <span className="text-[#ADADAD] text-xs">Snack</span>

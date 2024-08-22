@@ -39,7 +39,7 @@ const Products = () => {
   console.log(categories);
 
   const items = products?.map((e) => (
-    <Card key={e.id} img={e.images[0]} title={e.title} />
+    <Card key={e.id} img={e.images[0]} title={e.title} id={e.id} />
   ));
   return (
     <div>
