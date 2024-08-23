@@ -1,24 +1,24 @@
 import React from "react";
-import { FaStar, FaRegHeart } from "react-icons/fa"; // Импортируем иконку для кнопки "Like"
+import { FaStar, FaRegHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-const Card = ({ img, title, id }) => {
+const Card = ({ img, title, id, price, rating }) => {
   return (
     <div className="relative border border-gray-300 rounded-lg shadow-md w-[220px] h-[320px] px-3 py-4 bg-white flex flex-col transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-gray-100">
       <button className="absolute top-2 right-2 p-2 text-gray-500 hover:text-red-500 transition-colors duration-300">
         <FaRegHeart className="text-lg" />
       </button>
 
-      <div className="product__img mb-3 flex items-center justify-center flex-grow">
-        <Link to={`product/${id}`}>
+      <Link to={`product/${id}`}>
+        <div className="product__img mb-3 flex items-center justify-center flex-grow">
           <img
             src={img}
             alt={title}
             className="w-full h-24 object-contain rounded-md transition-transform duration-300 ease-in-out transform hover:scale-110"
           />
-        </Link>
-      </div>
+        </div>
+      </Link>
 
       <div className="product__desc flex flex-col flex-grow">
         <span className="text-[#ADADAD] text-xs">Snack</span>
@@ -32,8 +32,10 @@ const Card = ({ img, title, id }) => {
         </p>
         <div className="flex justify-between items-center mt-auto">
           <div className="flex flex-col">
-            <p className="text-sm font-bold text-gray-900">$28.85</p>
-            <p className="text-xs text-gray-500 line-through">$32.8</p>
+            <p className="text-sm font-bold text-gray-900">{price}</p>
+            <p className="text-xs text-gray-500 line-through">{`${
+              price * 1.1
+            } `}</p>
           </div>
           <button className="flex items-center text-green-500 hover:text-green-600 text-xs transition-colors duration-300">
             <IoCartOutline className="mr-1" /> Add

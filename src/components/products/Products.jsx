@@ -38,7 +38,15 @@ const Products = () => {
   }, [sort]);
 
   const items = products?.map((e) => (
-    <Card key={e.id} img={e.images[0]} title={e.title} id={e.id} sort={sort} />
+    <Card
+      key={e.id}
+      img={e.images[0]}
+      title={e.title}
+      id={e.id}
+      price={e.price}
+      rating={e.rating}
+      sort={sort}
+    />
   ));
 
   return (

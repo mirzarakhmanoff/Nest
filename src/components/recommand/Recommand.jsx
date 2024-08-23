@@ -15,7 +15,13 @@ const Recommand = () => {
   }, []);
 
   const items = data?.map((e) => (
-    <Card key={e.id} img={e.images[0]} title={e.title} id={e.id} />
+    <Card
+      key={e.id}
+      img={e.images[0]}
+      title={e.title}
+      id={e.id}
+      price={e.price}
+    />
   ));
 
   return (
