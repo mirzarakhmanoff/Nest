@@ -16,7 +16,7 @@ const Products = () => {
     setSort(value);
     console.log(value);
   };
-
+  console.log(sort);
   useEffect(() => {
     setLoading(true);
     axios
@@ -38,7 +38,7 @@ const Products = () => {
   }, [sort]);
 
   const items = products?.map((e) => (
-    <Card key={e.id} img={e.images[0]} title={e.title} id={e.id} />
+    <Card key={e.id} img={e.images[0]} title={e.title} id={e.id} sort={sort} />
   ));
 
   return (
@@ -67,7 +67,7 @@ const Products = () => {
       <div className="container mx-auto flex gap-6 flex-wrap items-center justify-center">
         {items}
         {loading ? (
-          Array.from({ length: 4 }).map((_, index) => <Skeleton key={index} />)
+          Array.from({ length: 5 }).map((_, index) => <Skeleton key={index} />)
         ) : (
           <div></div>
         )}

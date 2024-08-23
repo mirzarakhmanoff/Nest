@@ -1,11 +1,15 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaRegHeart } from "react-icons/fa"; // Импортируем иконку для кнопки "Like"
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const Card = ({ img, title, id }) => {
   return (
-    <div className="border border-gray-300 rounded-lg shadow-md w-[220px] h-[320px] px-3 py-4 bg-white flex flex-col transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-gray-100">
+    <div className="relative border border-gray-300 rounded-lg shadow-md w-[220px] h-[320px] px-3 py-4 bg-white flex flex-col transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-gray-100">
+      <button className="absolute top-2 right-2 p-2 text-gray-500 hover:text-red-500 transition-colors duration-300">
+        <FaRegHeart className="text-lg" />
+      </button>
+
       <div className="product__img mb-3 flex items-center justify-center flex-grow">
         <Link to={`product/${id}`}>
           <img
@@ -15,6 +19,7 @@ const Card = ({ img, title, id }) => {
           />
         </Link>
       </div>
+
       <div className="product__desc flex flex-col flex-grow">
         <span className="text-[#ADADAD] text-xs">Snack</span>
         <h4 className="text-sm font-semibold mt-1">{title}</h4>

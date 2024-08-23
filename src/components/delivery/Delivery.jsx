@@ -62,7 +62,9 @@ const Delivery = () => {
         </div>
       </div>
 
-      <div className="cards flex gap-3 my-5 flex-wrap">{items}</div>
+      <div className="cards flex gap-3 my-5 flex-wrap" key={items}>
+        {items}
+      </div>
     </div>
   );
 };

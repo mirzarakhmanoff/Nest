@@ -2,7 +2,7 @@ import React from "react";
 
 const Skeleton = () => {
   return (
-    <div className="relative w-full sm:w-64 border overflow-hidden bg-white shadow-md rounded-lg p-4">
+    <div className="relative w-full sm:w-52 border overflow-hidden bg-white shadow-md rounded-lg p-4">
       <div className="animate-pulse">
         <div className="w-full h-60 bg-gray-300 rounded-lg mb-4"></div>
         <div className="h-4 bg-gray-300 rounded mb-2 w-3/4"></div>
