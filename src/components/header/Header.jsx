@@ -57,12 +57,16 @@ const Header = () => {
             </div>
             <p className="ml-3 text-sm font-semibold text-gray-800">Cart</p>
           </button>
-          <button className="relative flex items-center px-4 py-2 bg-white borderrounded-lg ">
-            <div className="relative flex items-center">
-              <FaUser className="text-[#253D4E]  text-2xl" />
-            </div>
-            <p className="ml-3 text-sm font-semibold text-gray-800">Account</p>
-          </button>
+          <NavLink to={"/admin"}>
+            <button className="relative flex items-center px-4 py-2 bg-white borderrounded-lg ">
+              <div className="relative flex items-center">
+                <FaUser className="text-[#253D4E]  text-2xl" />
+              </div>
+              <p className="ml-3 text-sm font-semibold text-gray-800">
+                Account
+              </p>
+            </button>
+          </NavLink>
         </div>
       </nav>
     </div>
