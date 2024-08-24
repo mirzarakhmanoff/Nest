@@ -13,8 +13,7 @@ const Card = ({ img, title, id, price, rating }) => {
       payload: { id, img, title, price, rating },
     });
   };
-  // const imageUrl =
-  //   typeof img === "string" ? img : Array.isArray(img) ? img[0] : "";
+
   return (
     <div className="relative border border-gray-300 rounded-lg shadow-md w-[220px] h-[320px] px-3 py-4 bg-white flex flex-col transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-gray-100">
       <button
