@@ -43,26 +43,28 @@ const items = deliveryData?.map((e, idx) => (
 
 const Delivery = () => {
   return (
-    <div className="mx-auto container">
+    <div className="mx-auto container px-4 md:px-6">
       <div
-        className="h-[400px] bg-no-repeat  rounded-2xl flex items-end justify-between"
+        className="h-auto md:h-[400px] bg-no-repeat bg-cover rounded-2xl flex flex-col md:flex-row items-center justify-between"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
-        <div className="left flex border flex-col justify-center w-1/3  h-full items-start gap-3 ml-20">
-          <h3 className="text-[#253D4E] text-4xl">
+        <div className="left flex border flex-col justify-center w-full md:w-1/3 h-full items-start gap-3 p-4 md:ml-20">
+          <h3 className="text-[#253D4E] text-3xl md:text-4xl">
             Stay home & get your daily needs from our shop
           </h3>
-          <p className="text-[#7E7E7E] text-xl">
+          <p className="text-[#7E7E7E] text-lg md:text-xl">
             Start You'r Daily Shopping with Nest <span>Mart</span>
           </p>
           <Input />
         </div>
-        <div className="right">
-          <img src={delivery} alt="" />
+        <div className="right mt-5 md:mt-0 w-full md:w-auto flex justify-center">
+          <img src={delivery} alt="" className="w-1/2 md:w-full" />
         </div>
       </div>
 
-      <div className="cards flex gap-3 my-5 flex-wrap">{items}</div>
+      <div className="cards flex flex-wrap gap-4 my-5 justify-center">
+        {items}
+      </div>
     </div>
   );
 };

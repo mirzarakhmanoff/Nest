@@ -31,7 +31,7 @@ const fruitData = [
 const Categories = (item) => {
   return (
     <div className="container mx-auto mt-10">
-      <div className="category flex items-center gap-7">
+      <div className="category flex flex-wrap items-center gap-7">
         <div className="category__title mb-4">
           <h3 className="text-4xl">Featured Categories</h3>
         </div>
