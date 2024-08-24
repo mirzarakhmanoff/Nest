@@ -4,22 +4,16 @@ import axios from "@/api/index";
 import { IoHomeOutline, IoCartOutline } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaStar, FaRegHeart } from "react-icons/fa";
+import { useFetch } from "../hooks/useFetch";
 
 const Detail = () => {
   const { id } = useParams();
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    axios
-      .get(`products/${id}`)
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+
+  const { data } = useFetch(`products/${id}`);
 
   const [count, setCount] = useState(1);
-
   const increment = () => setCount((prevCount) => prevCount + 1);
   const decrement = () => setCount((prevCount) => Math.max(prevCount - 1, 1));
-  console.log(data);
   return (
     <>
       <div className="container mx-auto my-10 ">
@@ -49,7 +43,7 @@ const Detail = () => {
               <FaStar style={{ color: "#FFD601" }} />
               <span className="text-xs">(4.0)</span>
             </div>
-            <p>${data?.price}</p>
+            <p>${data?.price * count}</p>
             <p className="text-xs text-gray-500 line-through">
               {data?.price * 1.15}
             </p>

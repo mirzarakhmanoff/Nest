@@ -39,15 +39,19 @@ const Header = () => {
           </select>
         </div>
         <div className="buttons flex items-center">
-          <button className="relative flex items-center px-4 py-2 bg-white borderrounded-lg ">
-            <div className="relative flex items-center">
-              <FaRegHeart className="text-[#253D4E] text-2xl" />
-              <span className="absolute -top-2 -right-2 bg-[#3BB77E] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center border-2 border-white">
-                4
-              </span>
-            </div>
-            <p className="ml-3 text-sm font-semibold text-gray-800">Wishlist</p>
-          </button>
+          <NavLink to={"/wishlist"}>
+            <button className="relative flex items-center px-4 py-2 bg-white borderrounded-lg ">
+              <div className="relative flex items-center">
+                <FaRegHeart className="text-[#253D4E] text-2xl" />
+                <span className="absolute -top-2 -right-2 bg-[#3BB77E] text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center border-2 border-white">
+                  4
+                </span>
+              </div>
+              <p className="ml-3 text-sm font-semibold text-gray-800">
+                Wishlist
+              </p>
+            </button>
+          </NavLink>
           <button className="relative flex items-center px-4 py-2 bg-white borderrounded-lg ">
             <div className="relative flex items-center">
               <IoCartOutline className="text-[#253D4E]  text-2xl" />

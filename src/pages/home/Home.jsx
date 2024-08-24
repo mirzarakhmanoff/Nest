@@ -1,20 +1,18 @@
 import Categories from "@/components/categories/Categories";
 import Delivery from "@/components/delivery/Delivery";
-import Footer from "@/components/footer/Footer";
-import Header from "@/components/header/Header";
 import Hero from "@/components/hero/Hero";
+import { useFetch } from "@/components/hooks/useFetch";
 import Products from "@/components/products/Products";
 import React from "react";
 
 const Home = () => {
+  const { data } = useFetch("/products", { limit: 10 });
   return (
     <>
-      <Header />
       <Hero title="Fresh Vegetables Big discount" />
       <Categories />
-      <Products />
+      <Products data={data?.products} />
       <Delivery />
-      <Footer />
     </>
   );
 };
