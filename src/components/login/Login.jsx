@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { IoHomeOutline } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
@@ -103,4 +103,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default memo(Login);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import category1 from "@/assets/category1.png";
 import category2 from "@/assets/category2.png";
 import category3 from "@/assets/category3.png";
@@ -79,4 +79,4 @@ const Categories = (item) => {
   );
 };
 
-export default Categories;
+export default memo(Categories);

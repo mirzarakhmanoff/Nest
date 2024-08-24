@@ -1,15 +1,22 @@
-import React from "react";
+import React, { memo } from "react";
 import { FaStar, FaRegHeart, FaHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../context";
 
 const Card = ({ img, title, id, price, rating }) => {
-  const [{ wishlist }, dispatch] = useStateValue();
+  const [{ wishlist, cart }, dispatch] = useStateValue();
 
   const handleWishlistClick = () => {
     dispatch({
       type: "TOGGLE_WISHLIST",
+      payload: { id, img, title, price, rating },
+    });
+  };
+
+  const handleAddToCart = () => {
+    dispatch({
+      type: "ADD_TO_CART",
       payload: { id, img, title, price, rating },
     });
   };
@@ -54,7 +61,10 @@ const Card = ({ img, title, id, price, rating }) => {
               price * 1.1
             } `}</p>
           </div>
-          <button className="flex items-center text-green-500 hover:text-green-600 text-xs transition-colors duration-300">
+          <button
+            onClick={handleAddToCart}
+            className="flex items-center text-green-500 hover:text-green-600 text-xs transition-colors duration-300"
+          >
             <IoCartOutline className="mr-1" /> Add
           </button>
         </div>
@@ -63,4 +73,4 @@ const Card = ({ img, title, id, price, rating }) => {
   );
 };
 
-export default Card;
+export default memo(Card);

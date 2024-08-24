@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import Card from "../card/Card";
 import axios from "@/api";
 const Recommand = () => {
@@ -34,4 +34,4 @@ const Recommand = () => {
   );
 };
 
-export default Recommand;
+export default memo(Recommand);

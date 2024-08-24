@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 const Fruit = ({ title, img, kolvo }) => {
   return (
@@ -18,4 +18,4 @@ const Fruit = ({ title, img, kolvo }) => {
   );
 };
 
-export default Fruit;
+export default memo(Fruit);

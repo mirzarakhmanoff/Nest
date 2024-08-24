@@ -1,10 +1,11 @@
 export const initialState = JSON.parse(localStorage.getItem("store")) || {
-  son: 9,
+  son: 1,
   wishlist: [],
   cart: [],
   sorted: null,
   token: null,
   cart: [],
+  filter: [],
 };
 
 export const reducer = (state, action) => {
@@ -42,15 +43,25 @@ export const reducer = (state, action) => {
           cart: [...state.cart, { ...action.payload, quantity: 1 }],
         };
       }
+    case "FILTER":
+      return { ...state, filter: action.payload.filtered };
+    case "ADD_TO_CART":
+      return {
+        ...state,
+        cart: [...state.cart, action.payload],
+      };
+    case "REMOVE_FROM_CART":
+      return {
+        ...state,
+        cart: state.cart.filter((item) => item.id !== action.payload.id),
+      };
 
-    case "INC_CART":
-      return state;
-    case "DEC_CART":
-      return state;
-    case "REMOVE_CART":
-      return state;
-    case "RESET_CART":
-      return { ...state, cart: [] };
+    case "CLEAR_CART":
+      return {
+        ...state,
+        cart: [],
+      };
+
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Products from "@/components/products/Products";
 import Empty from "@/components/empty/Empty";
 import { useStateValue } from "@/components/context";
@@ -16,4 +16,4 @@ const Wishlist = () => {
   );
 };
 
-export default Wishlist;
+export default memo(Wishlist);

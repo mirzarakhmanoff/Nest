@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import heroBg from "@/assets/heroBg.png";
 import Input from "../input/Input";
 
@@ -21,4 +21,4 @@ const Hero = ({ title }) => {
   );
 };
 
-export default Hero;
+export default memo(Hero);

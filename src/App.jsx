@@ -6,6 +6,7 @@ import Single from "./pages/single/Single";
 import Admin from "./pages/admin/Admin";
 import Layout from "./components/layout/Layout";
 import Wishlist from "./pages/wishlist/Wishlist";
+import Cart from "./components/cart/Cart";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/product/:id" element={<Single />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
     </>

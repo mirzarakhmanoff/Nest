@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { IoIosSend } from "react-icons/io";
 
 const Input = () => {
@@ -19,4 +19,4 @@ const Input = () => {
   );
 };
 
-export default Input;
+export default memo(Input);

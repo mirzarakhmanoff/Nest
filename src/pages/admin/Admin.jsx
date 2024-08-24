@@ -1,5 +1,5 @@
 import Login from "@/components/login/Login";
-import React from "react";
+import React, { memo } from "react";
 
 const Admin = () => {
   return (
@@ -9,4 +9,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default memo(Admin);

@@ -1,21 +1,19 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 
-const Sort = ({ onSortChange }) => {
+const Sort = ({ onSortChange, sort }) => {
   const { data: categories } = useFetch(`products/category-list`);
-  const [sort, setSort] = useState("");
 
   const handleChange = (event) => {
     const value = event.target.value;
-    setSort(value);
+    onSortChange(value);
   };
-  console.log(sort);
   return (
-    <div>
+    <div className="container mx-auto ">
       <select
         onChange={handleChange}
         value={sort}
-        className="w-[200px] p-3 border border-gray-300 rounded-lg shadow-md bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+        className="w-[200px] ml-10 my-5 p-3 border border-gray-300 rounded-lg shadow-md bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
       >
         <option value="all">All</option>
         {categories?.map((e) => (
@@ -28,4 +26,4 @@ const Sort = ({ onSortChange }) => {
   );
 };
 
-export default Sort;
+export default memo(Sort);

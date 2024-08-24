@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import delivery from "@/assets/delivery.png";
 import heroBg from "@/assets/heroBg.png";
 import Input from "../input/Input";
@@ -37,8 +37,8 @@ const deliveryData = [
   },
 ];
 
-const items = deliveryData?.map((e) => (
-  <DeliveryCard img={e.img} title={e.title} desc={e.desc} />
+const items = deliveryData?.map((e, idx) => (
+  <DeliveryCard img={e.img} title={e.title} desc={e.desc} key={idx} />
 ));
 
 const Delivery = () => {
@@ -62,11 +62,9 @@ const Delivery = () => {
         </div>
       </div>
 
-      <div className="cards flex gap-3 my-5 flex-wrap" key={items}>
-        {items}
-      </div>
+      <div className="cards flex gap-3 my-5 flex-wrap">{items}</div>
     </div>
   );
 };
 
-export default Delivery;
+export default memo(Delivery);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "@/api/index";
 import { IoHomeOutline, IoCartOutline } from "react-icons/io5";
@@ -102,4 +102,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default memo(Detail);

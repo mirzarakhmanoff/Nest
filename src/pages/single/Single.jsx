@@ -2,7 +2,7 @@ import Delivery from "@/components/delivery/Delivery";
 import Detail from "@/components/detail/Detail";
 
 import Recommand from "@/components/recommand/Recommand";
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 
 const Single = () => {
   useEffect(() => {
@@ -18,4 +18,4 @@ const Single = () => {
   );
 };
 
-export default Single;
+export default memo(Single);

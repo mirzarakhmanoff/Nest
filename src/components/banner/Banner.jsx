@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 const Banner = ({ img, text }) => {
   return (
     <div
@@ -18,4 +18,4 @@ const Banner = ({ img, text }) => {
   );
 };
 
-export default Banner;
+export default memo(Banner);

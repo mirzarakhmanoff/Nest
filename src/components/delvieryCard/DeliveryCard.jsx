@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import icon1 from "@/assets/icon1.png";
 
 const DeliveryCard = ({ img, title, desc }) => {
@@ -15,4 +15,4 @@ const DeliveryCard = ({ img, title, desc }) => {
   );
 };
 
-export default DeliveryCard;
+export default memo(DeliveryCard);
