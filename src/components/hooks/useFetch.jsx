@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "@/api";
+import { data } from "autoprefixer";
 
 export const useFetch = (path, params, deps = []) => {
   const [data, setData] = useState(null);

@@ -2,9 +2,10 @@ export const initialState = JSON.parse(localStorage.getItem("store")) || {
   son: 9,
   wishlist: [],
   cart: [],
+  sorted: null,
   token: null,
+  cart: [],
 };
-console.log(initialState.wishlist);
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -32,26 +33,24 @@ export const reducer = (state, action) => {
         localStorage.setItem("store", JSON.stringify(wishlistMemory));
         return wishlistMemory;
       }
-    case "INC_CART":
-      let cartIndex = state.cart.findIndex(
-        (item) => item.id === action.payload.id
-      );
-      if (cartIndex < 0) {
+
+    case "ADD_CART":
+      let idx = state.cart.findIndex((item) => item.id === action.payload.id);
+      if (idx < 0) {
         return {
           ...state,
           cart: [...state.cart, { ...action.payload, quantity: 1 }],
         };
-      } else {
-        return {
-          ...state,
-          cart: state.cart.map((item) =>
-            item.id === action.payload.id
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-          ),
-        };
       }
 
+    case "INC_CART":
+      return state;
+    case "DEC_CART":
+      return state;
+    case "REMOVE_CART":
+      return state;
+    case "RESET_CART":
+      return { ...state, cart: [] };
     default:
       return state;
   }

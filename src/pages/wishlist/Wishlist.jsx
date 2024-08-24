@@ -5,8 +5,6 @@ import { useStateValue } from "@/components/context";
 
 const Wishlist = () => {
   const [data] = useStateValue();
-  console.log(data.wishlist);
-
   return (
     <div>
       {data.wishlist && data.wishlist.length > 0 ? (
