@@ -11,8 +11,9 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ["source-map-js"],
+      external: [],
     },
+    sourcemap: false,
   },
   plugins: [react()],
 });
